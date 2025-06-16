@@ -5,22 +5,14 @@ body {
     font-optical-sizing: auto;
     font-weight: 50px;
     font-style: normal;
-    height: 100dvh;
+    height: auto;
     padding: 0;
     margin: 0;
     background-image: url(../../zetong-li-rXXSIr8-f9w-unsplash.jpg);
     background-position: center;
     background-size: cover;
     color: white;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 10% 80% 10%;
     font-size: 20px;
-}
-#content {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100%;
 }
 header {
     height: auto;
@@ -39,13 +31,20 @@ button {
     padding: 20px;
 }
 button:hover {
-    background-color: rgb(145, 78, 161);
+    background-color: rgb(3, 3, 110);;
+}
+.active {
+    background-color: rgb(3, 3, 110);
 }
 .left {
     padding-left: 50px;
 }
 .right {
     padding: 50px;
+}
+.right > p {
+    margin-top: 200px;
+    font-size: 30px;
 }
 .title {
     font-size: 30px;
@@ -65,9 +64,99 @@ button:hover {
     padding: 20px;
     font-size: 20px;
     border-radius: 12px;
+    margin-top: 100px;
+}
+.work {
+    font-size: 25px;
 }
 footer {
     background-color: salmon;
     display: grid;
     place-items: center;
+}
+#home-tab {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    height: 100dvh;
+}
+#menu-tab {
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-template-rows: 50% 50%;
+    padding: 50px;
+    display: none;
+    place-items: center;
+}
+.foods {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 80% 20%;
+    text-align: center;
+}
+#menu-tab > div > span {
+    box-shadow: 0 0 10px white;
+    width: 500px;
+    height: 350px;
+    border-radius: 12px;
+}
+#about-tab {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    display: none;
+}
+#contact-tab {
+    height: 100dvh;
+    font-size: 25px;
+    gap: 200px;
+    display: none;
+}
+#contact-tab > h1 {
+    text-align: center;
+}
+.cont {
+    display: flex;
+    gap: 200px;
+    justify-content: center;
+}
+a {
+    text-decoration: none;
+}
+#fries {
+    background-image: url(../../easy-french-fries-1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#coffee {
+    background-image: url(../../Cup-coffee-beans-wooden.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#cupcakes {
+    background-image: url(../../moist-chocolate-cupcakes-5.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#burger {
+    background-image: url(../../ultimate-southern-burger_batch64_beauty01-86-b9c26e256dd34e39b6c0cfb0c02a9fef.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#hotdog {
+    background-image: url(../../gbc_jamesknappett-5.whqc_768x512q90.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#drumsticks {
+    background-image: url(../../AR-25492-firecracker-fried-chicken-drumsticks-DDMFS-4x3-d0028b435b674cd59f6d69630f4454a8.jpg);
+    background-position: center;
+    background-size: cover;
+}
+h4 {
+    font-size: 30px;
+    margin-top: 0;
 }
