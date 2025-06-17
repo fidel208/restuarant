@@ -1,64 +1,45 @@
-import "./style.css";
+// index.js
+import createHome from './home.js';
+import createMenu from './menu.js';
+import createAbout from './about.js';
+import createContact from './contact.js';
 
-const buttons = document.querySelectorAll("button");
+const content = document.getElementById('content');
+const navButtons = document.querySelectorAll('nav button');
 
-const homeBtn = document.getElementById("home");
-const menuBtn = document.getElementById("menu");
-const aboutBtn = document.getElementById("about");
-const contactBtn = document.getElementById("contact");
-const homeTab = document.getElementById("home-tab");
-const menuTab = document.getElementById("menu-tab");
-const aboutTab = document.getElementById("about-tab");
-const contactTab = document.getElementById("contact-tab");
+// Tab switching function
+function switchTab(tabName) {
+  // Clear current content
+  content.innerHTML = '';
+  
+  // Create new content based on tab
+  switch(tabName) {
+    case 'home':
+      content.appendChild(createHome());
+      break;
+    case 'menu':
+      content.appendChild(createMenu());
+      break;
+    case 'about':
+      content.appendChild(createAbout());
+      break;
+    case 'contact':
+      content.appendChild(createContact());
+      break;
+  }
+  
+  // Update active button
+  navButtons.forEach(btn => {
+    btn.classList.toggle('active', btn.id === tabName);
+  });
+}
 
-homeBtn.addEventListener("click", function() {
-    homeBtn.classList.add("active");
-    menuBtn.classList.remove("active");
-    aboutBtn.classList.remove("active");
-    contactBtn.classList.remove("active");
-
-    homeTab.style.display = "grid";
-    menuTab.style.display = "none";
-    aboutTab.style.display = "none";
-    contactTab.style.display = "none";
-
+// Set up event listeners
+navButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    switchTab(button.id);
+  });
 });
 
-menuBtn.addEventListener("click", function() {
-    homeBtn.classList.remove("active");
-    menuBtn.classList.add("active");
-    aboutBtn.classList.remove("active");
-    contactBtn.classList.remove("active");
-
-    homeTab.style.display = "none";
-    menuTab.style.display = "grid";
-    aboutTab.style.display = "none";
-    contactTab.style.display = "none";
-
-});
-
-aboutBtn.addEventListener("click", function() {
-    homeBtn.classList.remove("active");
-    menuBtn.classList.remove("active");
-    aboutBtn.classList.add("active");
-    contactBtn.classList.remove("active");
-
-    homeTab.style.display = "none";
-    menuTab.style.display = "none";
-    aboutTab.style.display = "flex";
-    contactTab.style.display = "none";
-
-});
-
-contactBtn.addEventListener("click", function() {
-    homeBtn.classList.remove("active");
-    menuBtn.classList.remove("active");
-    aboutBtn.classList.remove("active");
-    contactBtn.classList.add("active");
-
-    homeTab.style.display = "none";
-    menuTab.style.display = "none";
-    aboutTab.style.display = "none";
-    contactTab.style.display = "block";
-
-});
+// Initialize with home tab
+switchTab('home');
